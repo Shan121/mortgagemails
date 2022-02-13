@@ -34,7 +34,7 @@ const EmailForm = ({
         },
       };
       const { data } = await axios.post(
-        `${process.env.REACT_APP_API}/send`,
+        `/api/send`,
         { name, email, subject, message },
         config
       );
@@ -75,6 +75,7 @@ const EmailForm = ({
       clearTimeout(timeout);
     };
   }, [error, success]);
+
   return (
     <div className='mt-2'>
       <h1>Email</h1>
